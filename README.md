@@ -1,4 +1,4 @@
-# Cyber-and-IT-risk-analytics-Project
+# Automated CISA KEV Risk Analytics
 
 # Project Overview
   This project implements an end-to-end Vulnerability Risk Assessment Pipeline. It automates the extraction of CISA's Known Exploited Vulnerabilities (KEV), enriches them with CVSS severity scores via the NVD API, and calculates a dynamic Time-Decay Exposure Score. The goal is to prioritize patching efforts based on real-world threat intelligence and temporal risk factors.
