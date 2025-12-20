@@ -18,13 +18,13 @@
 - Visualization: Includes generated charts for Monthly Trends, Vendor Risk Exposure, and Top 10 Critical CVEs.
 
 # Files in this Project
-* 'Automated CISA KEV Risk Analytics Project' : The main Python code.
+* 'Automated CISA KEV Risk Analytics Project.ipynb' : The main Python code.
 * 'risk.db': The database file storing all vulnerability data.
 * 'exports/': Folder containing the output reports (e.g. Monthly Trends, Top Vendors).
 
 # Tools Used
 * **Language:** Python
-* **Libraries:** Pandas (Data), Numpy, SQLAlchemy (Database), Requests (API), Matplotlib (Charts)
+* **Libraries:** Pandas (Data Processing), Numpy (Math/Stats), SQLAlchemy (Database), Requests (API), Matplotlib/Seaborn (Visualization).
 * **Database:** SQLite
 
 **⚠️ Note on Data: Due to the instability of public NVD API endpoints, the system currently runs in a Hybrid Mode. Real-time CVSS scores are fetched where possible, while missing data is imputed using a conservative simulation model (Normal Distribution centered at High Severity 7.5) to demonstrate the risk scoring logic effectively.**
