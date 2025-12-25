@@ -11,7 +11,7 @@
 - Storage: Stores the cleaned data into a SQLite Database ('risk.db'), simulating a real-world environment where data is kept in databases, not just Excel files.
 - SQL Analysis: Uses SQL queries to analyze trends, such as top vendors with the most vulnerabilities in the last 12 months.
 # 3. Risk Calculation & System Resilience
-- Robust Data Fetching: The system includes a Simulation Mode Toggle (use_simulation). Since fetching data from the external NVD API one-by-one can be time-consuming or unstable, this feature allows the pipeline to switch to Simulation Mode (using statistical modeling) for smooth demonstrations, while still retaining the ability to fetch Live Data when needed.
+- Robust Data Fetching: The system features a Simulation Mode Toggle (use_simulation). While the pipeline is designed to fetch Live Data by default, this toggle provides a fallback mechanism to switch to Simulation Mode in case of API rate limiting or network instability, ensuring continuous operation.
 - Custom Scoring: Implemented a Time-Decay Model (Half-Life logic) to calculate a Current Risk Score. (Logic: Newer vulnerabilities get a higher score because they are fresh and likely to be attacked. Older ones get a lower score over time.)
 # 4. Reporting & Visualization
 - Export: Generates ready-to-use CSV files for further reporting.
@@ -27,7 +27,7 @@
 * **Libraries:** Pandas (Data Processing), Numpy (Math/Stats), SQLAlchemy (Database), Requests (API), Matplotlib/Seaborn (Visualization).
 * **Database:** SQLite
 
-**⚠️ Note : Currently, the NVD API requires fetching vulnerabilities individually, which can result in long wait times due to rate limiting. To ensure a smooth presentation and avoid timeouts, the project is set to Simulation Mode by default. To fetch real-time data from the API, you can change the configuration to 'use_simulation = False' in the script.**
+**⚠️Note on API Performance: The project is currently configured to fetch Real-time Data (use_simulation) for maximum accuracy. However, due to NVD API rate limiting (fetching one-by-one), the process may take some time. If you experience timeouts or require a smoother demonstration, you can switch to Simulation Mode by setting 'use_simulation = True' in the script.**
 
 # Author
 **NICHARAT THITIPANUCHAIPAT(MEI)**
